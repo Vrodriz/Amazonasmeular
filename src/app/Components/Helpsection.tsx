@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Helpsection = () => {
   return (
     <div>
       <div className="bg-[#323c67] flex flex-wrap justify-around mx-auto h-32 contrast:bg-gray-950">
@@ -38,4 +38,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Helpsection;

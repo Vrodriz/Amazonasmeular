@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Header from "./Components/Header";
-import Navbar from "./Components/Navbar";
-import Navbar2 from "./Components/NavBar2";
 import Carousel from "./Components/Carousel";
+import Helpsection from "./Components/Helpsection";
+import Menu from "./Components/Menu";
 import { fetchHeroSectionData } from "./services/apiServices";
 import { baseUrl } from "./lib/utils";
+
 
 const Page: React.FC = () => {
   const [slides, setSlides] = useState([]);
@@ -33,8 +34,8 @@ const Page: React.FC = () => {
   return (
     <div>
       <Header />
-      <Navbar />
-      <Navbar2 />
+      <Helpsection />
+      <Menu />
       <Carousel slides={slides} />
     </div>
   );

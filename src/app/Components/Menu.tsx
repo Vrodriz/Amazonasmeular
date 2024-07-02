@@ -9,7 +9,7 @@ const navItems = [
   { label: "Entre em Contato", href: "#" },
 ];
 
-const Navbar2: React.FC = () => {
+const Menu: React.FC = () => {
   return (
     <div className="border-b-2 h-12 border-Palm-leaf bg-[#3754af]">
       <div className="h-full flex items-center justify-center mx-auto">
@@ -36,4 +36,4 @@ const Navbar2: React.FC = () => {
   );
 };
 
-export default Navbar2;
+export default Menu;
