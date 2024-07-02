@@ -1,6 +1,13 @@
 import React from 'react';
-import { FaHome } from 'react-icons/fa'; 
 
+const navItems = [
+  { label: "Inicio", href: "#" },
+  { label: "Amazonas Meu Lar", href: "#" },
+  { label: "Documentos", href: "#" },
+  { label: "Acesso à informação", href: "#" },
+  { label: "Soluções de Moradia", href: "#" },
+  { label: "Entre em Contato", href: "#" },
+];
 
 const Navbar2: React.FC = () => {
   return (
@@ -8,36 +15,17 @@ const Navbar2: React.FC = () => {
       <div className="h-full flex items-center justify-center mx-auto">
         <div className="w-full l-mmd:w-auto flex items-center justify-center" id="navbar-dropdown">
           <ul className="flex flex-row items-center font-semiBold p-2 l-mmd:p-0 space-x-4">
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" aria-current="page" href="#">
-                Inicio
-              </a>
-            </li>
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" href="#">
-                Amazonas Meu Lar
-              </a>
-            </li>
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" href="#">
-                Documentos
-              </a>
-            </li>
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" href="#">
-                Acesso à informação
-              </a>
-            </li>
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" href="#">
-                Soluções de Moradia
-              </a>
-            </li>
-            <li className="hover:bg-Palm-leaf p-1">
-              <a className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg" href="#">
-                Entre em Contato
-              </a>
-            </li>
+            {navItems.map((item, index) => (
+              <li key={index} className="hover:bg-Palm-leaf p-1">
+                <a
+                  className="block py-1 px-3 text-white rounded l-mmd:bg-transparent l-mmd:p-0 font-bold text-lg"
+                  aria-current={item.label === "Inicio" ? "page" : undefined}
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -46,3 +34,4 @@ const Navbar2: React.FC = () => {
 };
 
 export default Navbar2;
+
