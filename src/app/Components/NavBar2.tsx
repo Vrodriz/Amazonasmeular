@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const navItems = [
   { label: "Inicio", href: "#" },
@@ -13,7 +13,10 @@ const Navbar2: React.FC = () => {
   return (
     <div className="border-b-2 h-12 border-Palm-leaf bg-[#3754af]">
       <div className="h-full flex items-center justify-center mx-auto">
-        <div className="w-full l-mmd:w-auto flex items-center justify-center" id="navbar-dropdown">
+        <div
+          className="w-full l-mmd:w-auto flex items-center justify-center"
+          id="navbar-dropdown"
+        >
           <ul className="flex flex-row items-center font-semiBold p-2 l-mmd:p-0 space-x-4">
             {navItems.map((item, index) => (
               <li key={index} className="hover:bg-Palm-leaf p-1">
@@ -34,4 +37,3 @@ const Navbar2: React.FC = () => {
 };
 
 export default Navbar2;
-

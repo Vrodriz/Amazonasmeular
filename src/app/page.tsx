@@ -1,11 +1,11 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Navbar2 from "./Components/NavBar2";
 import Carousel from "./Components/Carousel";
-import { fetchHeroSectionData } from './services/apiServices';
-import { baseUrl } from './lib/utils';
+import { fetchHeroSectionData } from "./services/apiServices";
+import { baseUrl } from "./lib/utils";
 
 const Page: React.FC = () => {
   const [slides, setSlides] = useState([]);
@@ -15,11 +15,11 @@ const Page: React.FC = () => {
       try {
         const data = await fetchHeroSectionData();
         const imageSlides = data.map((item: any) => ({
-          type: 'image',
+          type: "image",
           content: {
             src: baseUrl + item.img.data.attributes.url,
-            alt: item.img.data.attributes.name
-          }
+            alt: item.img.data.attributes.name,
+          },
         }));
         setSlides(imageSlides);
       } catch (error) {
@@ -32,8 +32,8 @@ const Page: React.FC = () => {
 
   return (
     <div>
-      <Header /> 
-      <Navbar /> 
+      <Header />
+      <Navbar />
       <Navbar2 />
       <Carousel slides={slides} />
     </div>
@@ -41,4 +41,3 @@ const Page: React.FC = () => {
 };
 
 export default Page;
-

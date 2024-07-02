@@ -1,12 +1,12 @@
 "use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 interface CarouselProps {
   slides: {
@@ -24,13 +24,17 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         autoplay={{ delay: 4000 }}
         spaceBetween={50}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
+        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            {slide.type === 'image' && (
-              <img className="w-full h-auto" src={slide.content.src} alt={slide.content.alt} />
+            {slide.type === "image" && (
+              <img
+                className="w-full h-auto"
+                src={slide.content.src}
+                alt={slide.content.alt}
+              />
             )}
           </SwiperSlide>
         ))}
@@ -40,4 +44,3 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 };
 
 export default Carousel;
-
